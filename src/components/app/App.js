@@ -1,6 +1,5 @@
 import AppInfo from '../AppInfo/AppInfo';
-import SearchPanel from '../SearchPanel/SearchPanel';
-import AppFilter from '../AppFilter/AppFilter';
+import Filter from '../Filter/Filter';
 import EmployeesList from '../EmployeesList/EmployeesList';
 import EmployeesAddForm from '../EmployeesAddForm/EmployeesAddForm';
 
@@ -11,10 +10,7 @@ const App = () => {
     <div className="app">
         <AppInfo />
 
-        <div className="search-panel">
-            <SearchPanel/>
-            <AppFilter/>
-        </div>
+        <Filter />
         
         <EmployeesList/>
         <EmployeesAddForm/>
