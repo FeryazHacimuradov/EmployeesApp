@@ -2,8 +2,10 @@ import './employeesAddForm.css';
 
 const EmployeesAddForm = () => {
     return (
-        <div className="app-add-form">
-            <h3>Add a new employee</h3>
+        <div className="app-add-form"
+            style={{ backgroundColor: '#3d5a81' }}
+        >
+            <h3 className='text-2xl'>Add a new employee</h3>
             <form
                 className="add-form d-flex">
                 <input type="text"
