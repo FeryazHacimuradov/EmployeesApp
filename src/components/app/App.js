@@ -11,29 +11,31 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import './app.css';
 
 const App = () => {
-  const { themeSettings, setThemeSettings } = useStateContext();
+  const { currentMode, themeSettings, setThemeSettings } = useStateContext();
 
   return (
-    <div> {/* className={currentMode === 'Dark' ? 'dark' : ''} */}
-      <div className="fixed right-12 bottom-12" style={{ zIndex: '1000' }}>
-        <TooltipComponent content="Settings" position="Top">
-          <button type="button" 
-                  className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
-                  onClick={() => setThemeSettings(true)}
-                  style={{ background: 'blue', borderRadius: '50%'}}>
-            <FiSettings />
-          </button>
-        </TooltipComponent>
-      </div>
-      <div className="app">
-        {themeSettings && <ThemeSettings />}
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
+      <div className='dark:bg-main-dark-bg'>
+        <div className="fixed right-12 bottom-12" style={{ zIndex: '1000' }}>
+          <TooltipComponent content="Settings" position="Top">
+            <button type="button" 
+                    className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
+                    onClick={() => setThemeSettings(true)}
+                    style={{ background: 'blue', borderRadius: '50%'}}>
+              <FiSettings />
+            </button>
+          </TooltipComponent>
+        </div>
+        <div className="app">
+          {themeSettings && <ThemeSettings />}
 
-        <AppInfo />
+          <AppInfo />
 
-        <Filter />
-        
-        <EmployeesList/>
-        <EmployeesAddForm/>
+          <Filter />
+          
+          <EmployeesList/>
+          <EmployeesAddForm/>
+        </div>
       </div>
     </div>
   );

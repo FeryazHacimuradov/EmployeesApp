@@ -1,11 +1,14 @@
 import React from 'react';
+import { useStateContext } from '../../contexts/ContextProvider';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import AppFilter from '../AppFilter/AppFilter';
 
 const Filter = () => {
+  const { currentColor } = useStateContext();
+  
   return (
     <div className="search-panel mx-48"
-        style={{ backgroundColor: '#3d5a81' }}
+        style={{ backgroundColor: currentColor }}
     >
         <SearchPanel/>
         <AppFilter/>

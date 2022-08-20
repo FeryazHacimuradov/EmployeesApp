@@ -1,11 +1,16 @@
 import React from 'react'
+
+import { useStateContext } from '../../contexts/ContextProvider';
+
 import './appInfo.css';
 
 const AppInfo = () => {
+  const { currentColor } = useStateContext();
+
   return (
     <div className='mt-24'>
       <div className="app-info mx-48 text-2xl rounded bg-white dark:text-gray-200 dark:bg-secondary-dark-bg"
-            style={{ backgroundColor: '#3d5a81' }}
+            style={{ backgroundColor: currentColor }}
             >
         <h1>Accounting for employees in company HAJIMURADOV's</h1>
         <h2>Total number of employees:</h2>
