@@ -24,3 +24,4 @@ export const themeColors = [
     //   name: 'orange-theme',
     },
   ];
+
