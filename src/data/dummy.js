@@ -4,6 +4,10 @@ export const themeColors = [
       color: '#1A97F5',
     },
     {
+      //   name: 'blue-theme',
+        color: '#3d5a80',
+    },
+    {
     //   name: 'green-theme',
       color: '#03C9D7',
     },

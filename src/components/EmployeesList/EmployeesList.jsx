@@ -6,8 +6,6 @@ const EmployeesList = () => {
     return (
         <ul className="app-list list-group mx-48">
             <EmployeesListItem/>
-            <EmployeesListItem/>
-            <EmployeesListItem/>
         </ul>
     )
 }
