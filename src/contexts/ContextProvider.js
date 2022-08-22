@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import EmployeeService from '../services/EmployeeService';
 
 const StateContext = createContext();
 
@@ -7,9 +6,7 @@ export const ContextProvider = ({ children }) => {
   const [currentColor, setCurrentColor] = useState('#03C9D7');
   const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false);
-  const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
-
 
 
   const setMode = (e) => {
@@ -38,10 +35,8 @@ export const ContextProvider = ({ children }) => {
           setColor, 
           themeSettings, 
           setThemeSettings,
-          data,
-          setData,
           query,
-          setQuery
+          setQuery,
           }}>
       {children}
     </StateContext.Provider>
