@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "fullName": "Faryaz Hajimuradov",
+      "salary": "1000",
+      "id": 1
+    },
+    {
+      "fullName": "Ilqar Sukurlu",
+      "salary": "200",
+      "id": 2
+    },
+    {
+      "fullName": "Oktay Quluzade",
+      "salary": "300",
+      "id": 3
+    }
+  ]
+}
