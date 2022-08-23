@@ -11,9 +11,19 @@
       "id": 2
     },
     {
-      "fullName": "Hajimurad Hajimuradov",
-      "salary": "2000",
-      "id": 3
+      "fullName": "Ilqar Sukurlu",
+      "salary": "300",
+      "id": 10
+    },
+    {
+      "fullName": "Oktay Quluzade",
+      "salary": "778",
+      "id": 11
+    },
+    {
+      "fullName": "Ibrahim Aliyev",
+      "salary": "2323",
+      "id": 12
     }
   ]
 }

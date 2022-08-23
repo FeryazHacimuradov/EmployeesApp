@@ -3,8 +3,6 @@ import { useStateContext } from '../../contexts/ContextProvider';
 
 import useEmployeeService from '../../services/EmployeeService';
 
-import { httpHelper } from "../../helpers/httpHelper";
-
 import './employeesListItem.css';
 
 const EmployeesListItem = () => {
@@ -40,7 +38,7 @@ const EmployeesListItem = () => {
     return (
         <>
             <ul className="text-black bg-white dark:text-gray-200 dark:bg-secondary-dark-bg">
-                {users && users.filter((employee) => employee.fullName.includes(query)).map(u => <Main user={u} key={u.id} />)}
+                {users && users.filter((user) => user.fullName).map(u => <Main user={u} key={u.id} />)}
             </ul>
         </>
     )
