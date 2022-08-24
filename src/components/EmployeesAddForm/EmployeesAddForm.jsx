@@ -6,6 +6,8 @@ const EmployeesAddForm = ({ userData = {}, updateUser, postUser }) => {
     const [user, setUser] = useState({
 		fullName: userData.fullName ?? "",
 		salary: userData.salary ?? "",
+        increase: false,
+        rise: false
 	})
 
 
@@ -17,6 +19,8 @@ const EmployeesAddForm = ({ userData = {}, updateUser, postUser }) => {
         setUser({
             fullName: userData.fullName ?? "",
             salary: userData.salary ?? "",
+            increase: false,
+            rise: false
         });
     }
 

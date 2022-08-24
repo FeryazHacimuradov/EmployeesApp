@@ -3,16 +3,22 @@
     {
       "fullName": "Faryaz Hajimuradov",
       "salary": "1000",
+      "increase": true,
+      "rise": true,
       "id": 1
     },
     {
       "fullName": "Ilqar Sukurlu",
       "salary": "200",
+      "increase": false,
+      "rise": true,
       "id": 2
     },
     {
       "fullName": "Oktay Quluzade",
-      "salary": "300",
+      "salary": "200",
+      "increase": false,
+      "rise": true,
       "id": 3
     }
   ]

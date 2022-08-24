@@ -9,7 +9,8 @@ import './App.css';
 
 const App = () => {
 
-  const [users, setUsers] = useState(null)
+  	const [users, setUsers] = useState(null);
+	const [query, setQuery] = useState("");
 
 	const url = "http://localhost:8000/employees"
 	const api = httpHelper()
@@ -53,12 +54,14 @@ const App = () => {
   return (
     <div className="app">
         <AppInfo />
-        <Filter />
+        <Filter setQuery={setQuery} />
         <EmployeesList               
               users={users} 
               setUsers={setUsers}
               updateUser={updateUser}
-              deleteUser={deleteUser} />
+              deleteUser={deleteUser}
+			  query={query} 
+			  />
         <EmployeesAddForm postUser={postUser} />
     </div>
   );

@@ -35,6 +35,11 @@ export const httpHelper = () => {
 		return customFetch(url, options)
 	}
 
+	const put = (url, options) => {
+		options.method = "PUT"
+		return customFetch(url, options)
+	}
+
 	const del = (url, options) => {
 		options.method = "DELETE"
 		return customFetch(url, options)
@@ -43,6 +48,7 @@ export const httpHelper = () => {
 	return {
 		get,
 		post,
+		put,
 		del,
 	}
 }
