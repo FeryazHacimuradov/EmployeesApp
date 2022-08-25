@@ -11,34 +11,31 @@ const EmployeesList = ({ users, updateUser, deleteUser, query }) => {
             classNames += ' like';
         }
 
-        const onToogle = id => {
-            updateUser(id, {...user ,increase: !user.increase})
-            user.increase = !user.increase
+        const onToggleCookie = id => {
+            updateUser(id, {...user, increase: !user.increase})
         }
 
-        const onToggleProp = (id) => {
-            
-            console.log(id);
-            // updateUser(id, {...user, prop: !user.prop});
+        const onToggle = id => {
+            updateUser(id, {...user, rise: !user.rise})
         }
 
-        // const prop = e.currentTarget.getAttribute('data-toggle');
 
         // const onToggleProp = (id, prop) => {
-        //     updateUser(id, {...user, prop: !user.prop})
-        //     user.increase = !user.increase
+        //   const prop = e.currentTarget.getAttribute('data-toggle');
+        //   updateUser(id, {...user, prop: !user.prop})
+        //   user.increase = !user.increase
         // }
 
         // onToggleProp={(e) => onToggleProp(id, )}
 
 		return (
             <li className={classNames}>
-                <span className="list-group-item-label" onClick={onToggleProp(user.id)} data-toggle="rise">{user.fullName}</span>
-                <input type="text" className="list-group-item-input" defaultValue={user.salary}/>
+                <span className="list-group-item-label" onClick={() => onToggle(user.id)}>{user.fullName}</span>
+                <input type="text" className="list-group-item-input" defaultValue={user.salary + '$'}/>
                 <div className='flex justify-content-center align-items-center'>
                     <button type="button"
                         className="btn-cookie btn-sm"
-                        onClick={() => onToogle(user.id)}>
+                        onClick={() => onToggleCookie(user.id)}>
                         <i className="fas fa-cookie"></i>
                     </button>
 

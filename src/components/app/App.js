@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { httpHelper } from "../helpers/httpHelper";
 import AppInfo from '../AppInfo/AppInfo';
 import Filter from '../Filter/Filter';
@@ -40,20 +40,20 @@ const App = () => {
 			.catch(err => console.log(err))
 	}
 
-	const getUsers = () => {
+	const getUsers = useCallback(() => {
 		api
 			.get(`${url}?_expand=companies`)
 			.then(res => {
 				setUsers(res)
 			})
 			.catch(err => console.log(err))
-	}
+	}, [users])
 
 	if (!users) return null
 
   return (
     <div className="app">
-        <AppInfo />
+        <AppInfo users={users} />
         <Filter setQuery={setQuery} />
         <EmployeesList               
               users={users} 
