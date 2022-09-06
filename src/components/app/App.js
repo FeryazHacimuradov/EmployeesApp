@@ -12,8 +12,8 @@ const App = () => {
   	const [users, setUsers] = useState(null);
 	const [query, setQuery] = useState("");
 
-	const url = "http://localhost:8000/employees"
-	const api = httpHelper()
+	const url = "http://localhost:8000/employees";
+	const api = httpHelper();
 
 	useEffect(() => {
 		getUsers()
@@ -49,22 +49,41 @@ const App = () => {
 			.catch(err => console.log(err))
 	}, [users])
 
+	let filter = 'moreThen1000';
+
+	const filterPost = (filter) => {
+		switch (filter) {
+		case 'rise':
+			return users.filter(user => user.rise);
+		case 'moreThen1000':
+			return users.filter(user => user.salary >= 1000);
+		default:
+			return users;
+		}
+	}
+
 	if (!users) return null
 
-  return (
-    <div className="app">
-        <AppInfo users={users} />
-        <Filter setQuery={setQuery} />
-        <EmployeesList               
-              users={users} 
-              setUsers={setUsers}
-              updateUser={updateUser}
-              deleteUser={deleteUser}
-			  query={query} 
-			  />
-        <EmployeesAddForm postUser={postUser} />
-    </div>
-  );
+	console.log(filterPost(filter));
+
+
+	return (
+		<div className="app">
+			<AppInfo users={users} />
+			<Filter 
+					setQuery={setQuery}
+					users={users}
+					/>
+			<EmployeesList               
+				users={users} 
+				setUsers={setUsers}
+				updateUser={updateUser}
+				deleteUser={deleteUser}
+				query={query} 
+				/>
+			<EmployeesAddForm postUser={postUser} />
+		</div>
+	);
 }
 
 export default App;
